@@ -13,8 +13,8 @@ The *node2vec* algorithm learns continuous representations for nodes in any (un)
 **In order to build node2vec_spark, use the following:**
 
 ```
-$ git clone https://github.com/Skarface-/node2vec.git
-$ mvn clean package
+$ git clone https://github.com/QuanLab/node2vec-spark.git
+$ sbt clean assembly
 ```
 
 **and requires:**<br/>
@@ -31,8 +31,8 @@ These were described in these papers [node2vec: Scalable Feature Learning for Ne
 ### Random walk
 Example:
 	
-	./spark-submit --class com.navercorp.Main \ 
-				   ./node2vec_spark/target/node2vec-0.0.1-SNAPSHOT.jar \
+	./spark-submit --class vn.five9.Main \ 
+				   ./node2vec-spark/target/node2vec-spark-assembly-0.1.jar \
 				   --cmd randomwalk --p 100.0 --q 100.0 --walkLength 40 \
 				   --input <input> --output <output>
 
@@ -94,8 +94,8 @@ The output file (number of nodes)*numWalks random paths as follows:
 ### Embedding random paths
 Example:
 	
-	./spark-submit --class com.navercorp.Main \
-				   ./node2vec_spark/target/node2vec-0.0.1-SNAPSHOT.jar \
+	./spark-submit --class vn.five9.Main \
+				   ./node2vec-spark/target/node2vec-spark-assembly-0.1.jar \
 				   --cmd embedding --dim 50 --iter 20 \
 				   --input <input> --nodePath <node2id_path> --output <output>
 
@@ -132,9 +132,9 @@ The output files are **embeddings and word2vec model.** The embeddings file has 
 
 where dim1, ... , dimd is the d-dimensional representation learned by word2vec.
 
-the output file *word2vec model* has the spark word2vec model format. please reference to https://spark.apache.org/docs/1.5.2/mllib-feature-extraction.html#word2vec
+the output file *word2vec model* has the spark word2vec model format. please reference to https://spark.apache.org/docs/latest/mllib-feature-extraction.html#word2vec
 
-## References
+## Referenceshttps://spark.apache.org/docs/latest/mllib-feature-extraction.html
 1. [node2vec: Scalable Feature Learning for Networks](http://arxiv.org/abs/1607.00653)
 2. [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/abs/1301.3781)
 3. [Node2Vec for Spark version 1.6](https://github.com/aditya-grover/node2vec)
