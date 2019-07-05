@@ -134,7 +134,7 @@ where dim1, ... , dimd is the d-dimensional representation learned by word2vec.
 
 the output file *word2vec model* has the spark word2vec model format. please reference to https://spark.apache.org/docs/latest/mllib-feature-extraction.html#word2vec
 
-## Referenceshttps://spark.apache.org/docs/latest/mllib-feature-extraction.html
+## References
 1. [node2vec: Scalable Feature Learning for Networks](http://arxiv.org/abs/1607.00653)
 2. [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/abs/1301.3781)
 3. [Node2Vec for Spark version 1.6](https://github.com/aditya-grover/node2vec)
